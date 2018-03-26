@@ -7,3 +7,4 @@ desktop_packages:
   - "xfce4-settings"
   - "xfce4-mount-plugin"
   - "xfce4-power-manager"
+  - "cbatticon"
