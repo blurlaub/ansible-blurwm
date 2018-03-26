@@ -1,0 +1,19 @@
+---
+- name: Bring up docker containers for docker connection inventory iface
+  hosts: localhost
+  gather_facts: false
+  vars:
+    inventory:
+    - name: client
+      image: "urlaub/ansibleclient:arch"
+  roles:
+    - {
+        role: provision_docker,
+        provision_docker_inventory: "{{inventory}}",
+      }
+
+- name: Run blurwm tests
+  hosts: client
+  remote_user: root
+  roles:
+    - blurwm

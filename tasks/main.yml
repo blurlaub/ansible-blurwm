@@ -1,0 +1,8 @@
+---
+
+- name: ensure desktop specific packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ desktop_packages }}"
+

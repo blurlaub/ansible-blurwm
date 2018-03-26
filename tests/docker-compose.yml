@@ -1,0 +1,8 @@
+version: "2.2"
+
+services:
+  play:
+    build: .
+    volumes:
+      - "../../ansible-blurwm:/tests:rw"
+    command: ansible-playbook test.yml -vvv
